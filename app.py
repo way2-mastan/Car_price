@@ -1,3 +1,7 @@
+heroku buildpacks:set https://github.com/heroku/heroku-buildpack-python.git#remove-sqlite
+heroku config:set PYTHON_NO_SQLITE3=true
+git commit --allow-empty -m "test-new-python-runtime"
+git push heroku master
 from flask import Flask, render_template, request
 import jsonify
 import requests
